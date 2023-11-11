@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <title>ecWriter</title>
+
+  <link href="quill.snow.css" rel="stylesheet"></link>
+
+  <style>
+    body > #standalone-container {
+      margin: 5px 5px 5px 5px;
+    }
+  </style>
+
+  <script src="quill.min.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+
+<div id="standalone-container">
+  <div id="toolbar-container">
+    <span class="ql-formats">
+      <select class="ql-font"></select>
+      <select class="ql-size"></select>
+    </span>
+    <span class="ql-formats">
+      <button class="ql-bold"></button>
+      <button class="ql-italic"></button>
+      <button class="ql-underline"></button>
+      <button class="ql-strike"></button>
+    </span>
+    <span class="ql-formats">
+      <select class="ql-color"></select>
+      <select class="ql-background"></select>
+    </span>
+    <span class="ql-formats">
+      <button class="ql-script" value="sub"></button>
+      <button class="ql-script" value="super"></button>
+    </span>
+    <span class="ql-formats">
+      <button class="ql-header" value="1"></button>
+      <button class="ql-header" value="2"></button>
+    </span>
+    <span class="ql-formats">
+      <button class="ql-list" value="ordered"></button>
+      <button class="ql-list" value="bullet"></button>
+    </span>
+    <span class="ql-formats">
+        <select class="ql-align"></select>
+        <button class="ql-indent" value="-1"></button>
+        <button class="ql-indent" value="+1"></button>
+    </span>
+  </div>
+  <div id="editor-container"></div>
+</div>
+
+<script>
+  var quill = new Quill('#editor-container', {
+   
+    modules: {
+      formula: false,
+      syntax: false,
+      history: {
+        delay: 1000,
+        maxStack: 100,
+        userOnly: false
+      },
+      toolbar: '#toolbar-container'
+    },
+    placeholder: '',
+    theme: 'snow',
+    formats: ['background', 'bold', 'color', 'font', 'italic', 'size', 'strike', 'script', 'underline', 'header', 'indent', 'list', 'align'],
+  });
+
+  quill.setContents([{ insert: '\n' }]);
+  quill.focus();
+</script>
+
+</body>
+</html>
