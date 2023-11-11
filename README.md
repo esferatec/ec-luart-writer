@@ -1,6 +1,6 @@
 # ec-luart-writer (test application)
 
-This project is a Simple Writer application. It uses the webview module of LuaRT and the editor of Quill.
+This project is a simple Writer application. It uses the webview module of LuaRT and the editor of Quill.
 
 It should shows how to use the webview object and the interaction between the Quill API and LuaRT.
 
